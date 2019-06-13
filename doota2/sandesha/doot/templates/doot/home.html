@@ -1,0 +1,35 @@
+
+
+
+
+{% block content %}
+
+<h3>Scroll down to see new messages:</h3><br>
+    {% for obj in postlist %}
+    
+    
+     
+    
+      
+      <p style="font-weight: bold">{{obj.title}}</p>
+      <p>{{obj.text}}</p><br>
+    
+    {% endfor %}
+
+
+
+
+
+
+    <br><br><br><br><br>
+        <h2>New post:</h2>
+            <form method="POST" class="post-form">{% csrf_token %}
+             
+               {{ form.as_p }}
+                <button type="submit" class="save btn btn-primary">Send</button>
+            
+            </form>
+        
+        
+  
+         {% endblock %}
